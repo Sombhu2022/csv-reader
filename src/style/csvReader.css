@@ -1,0 +1,27 @@
+
+.btn {
+    border: none;
+    outline: none;
+    padding-inline: 20px;
+    padding-block: 15px;
+    margin: 10px;
+    font-size: large;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn1 {
+    background: rgba(0, 119, 255, 0.587);
+    
+}
+
+.btn2 {
+    background: rgba(30, 213, 245, 0.587);
+  
+}
+
+/* Hover Effects */
+.btn:hover {
+    filter: brightness(1.2);
+}
