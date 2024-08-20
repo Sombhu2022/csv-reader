@@ -1,9 +1,16 @@
-import React from 'react'
-import './app.css'
+import React, { useState } from "react";
+
+import CsvReader from "./views/CsvReader";
+
 function App() {
+ 
+
   return (
-    <div className='app'>App</div>
-  )
+   
+    <div>
+      <CsvReader/>
+    </div>
+  );
 }
 
-export default App
+export default App;
