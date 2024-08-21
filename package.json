@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/plugin-dsv": "^3.0.4",
     "axios": "^1.7.4",
     "papaparse": "^5.4.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vite-plugin-dts": "^4.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

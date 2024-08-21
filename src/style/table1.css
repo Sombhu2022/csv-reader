@@ -36,8 +36,10 @@
   
   .table-container{
    
-    overflow-x: auto;
-    /* max-width: 100%; */
+    overflow: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    margin-block: 20px;
   }
 
   table {
