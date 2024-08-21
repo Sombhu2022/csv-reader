@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Table1 from './Table1';
 import Table2 from './Table2';
-import '../style/CsvReader.css'
+import '../style/csvReader.css'
 
 function CsvReader() {
   const [showTable, setShowTable] = useState(null);
