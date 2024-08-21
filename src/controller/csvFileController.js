@@ -1,6 +1,6 @@
 import { parse } from "papaparse";
 
-const csvController = () => {
+const useCSVController = () => {
   const csvFileConverter = (file) => {
     return new Promise((resolve, reject) => {
       parse(file, {
@@ -21,4 +21,4 @@ const csvController = () => {
   return { csvFileConverter };
 };
 
-export default csvController;
+export default useCSVController;

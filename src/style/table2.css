@@ -1,0 +1,23 @@
+.table2{
+    width: 95vw;
+    max-width: 1300px;
+   
+   
+}
+
+.table2-container , .table1-container{
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  @media (max-width: 768px) {
+   .table1-container , .table2-container{
+    max-height: 70vh;
+   }
+  }
+  
