@@ -1,6 +1,21 @@
 /* App.css */
 
 
+
+
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9; /* Set a background color for the table header */
+  z-index: 2;
+}
+
   
 .table1 {
     width: 95vw;
@@ -42,12 +57,12 @@
     margin-block: 20px;
   }
 
-  table {
+  /* table {
     min-width: 100%;
     border-collapse: collapse;
     margin-bottom: 40px;
    
-  }
+  } */
   
   table,
   th,
@@ -81,6 +96,7 @@
     align-items: center;
     /* justify-content: center; */
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .select, .search-input {

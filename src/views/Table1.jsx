@@ -1,58 +1,49 @@
 import React, { useEffect, useState } from "react";
 
-import csvController from "../controller/csvFileController";
-
-import csvFile from '../assets/data/csv1.csv'
 
 import "../style/table1.css";
+import useCSVController from "../controller/csvFileController";
 
 function Table1() {
   const [convertData, setConvertData] = useState([]);
   const [showData, setShowData] = useState([]);
 
   const [heading, setHeading] = useState([]);
-  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
   const [option, setOption] = useState("");
   const [inputData, setInputData] = useState("");
 
-//   const { csvFileConverter } = csvController();
+  const { csvFileConverter } = useCSVController()
 
-//   const handleFileUpload = async (e) => {
-//     const file = e.target.files[0];
-
-//     if (csvFile) {
-//       try {
-//         setLoading(true);
-//         const data = await csvFileConverter(file);
-//         if (data) {
-//           setConvertData(data.data);
-//           setShowData(data.data);
-//           const headingData = Object.keys(data.data[0]);
-//           setHeading(headingData);
-//         }
-//         setLoading(false);
-//       } catch (error) {
-//         console.error(error);
-//         setLoading(false);
-//       }
-//     }
-//   };
 
 useEffect(() => {
-    if (csvFile) {
-      setConvertData(csvFile);
-      setShowData(csvFile);
+  const fetchData = async () => {
+    try {
+      setLoading(true)
+      const response = await fetch("src/assets/data/csv1.csv");
+      let textfile = await response.text();
+      
+      const { data, success } = await csvFileConverter(textfile);
+      console.log(data);
+      
+      if (success && data.length > 0) {
+        
+          setShowData(data)
+          setConvertData(data)
+          const headingData = Object.keys(data[0])
+          setHeading(headingData)
+        
+      }
+      setLoading(false)
+    } catch (error) {
+      console.error("Error converting CSV file:", error);
+      setLoading(false)
     }
-  }, [csvFile]);
-  
-  useEffect(() => {
-    if (convertData.length > 0) {
-      const headingData = Object.keys(convertData[0]);
-      setHeading(headingData);
-    }
-  }, [convertData]);
+  };
+
+  fetchData();
+}, []);
   
 
   const handleSearch = (e) => {
@@ -74,20 +65,12 @@ useEffect(() => {
     }
   };
 
-  console.log("csv file",csvFile);
+
   
   if (loading) return <div>Loading...</div>;
 
   return (
     <div className="table1">
-
-      {/* <input
-        type="file"
-        accept=".csv"
-        onChange={handleFileUpload}
-        className="file-input"
-      /> */}
-
       <div className="search-container">
         <select
           name=""
